@@ -42,8 +42,7 @@ function updateView() {
                 </div>
             </div>
         </div>
-
-        <div id="eightBallText">${EightBallText}</div>   
+        <div id="eightBallTextDiv">${EightBallText}</div>   
     </div>
     `;
 }
@@ -51,20 +50,12 @@ function updateView() {
 //Controller
 function shake8Ball() {
     random8BallNumber();
-    EightBallText = eightBallResponses[eightBallIndex]
+    EightBallText = eightBallResponses[eightBallIndex];
     updateView();
 }
 
 /* function change8BallAnswerColor() {
-    if (eightBallIndex <= 9) {
-        document.getElementById('eightBallText').style.color = "green";
-    }
-    else if (eightBallIndex > 9 && eightBallIndex <= 14) {
-        document.getElementById('eightBallText').style.color = "yellow";
-    }
-    else if (eightBallIndex > 14) {
-        document.getElementById('eightBallText').style.color = "red";
-    }
+    document.getElementById("eightBallTextDiv").style.color = "red";
 } */
 
 function random8BallNumber() {
@@ -87,7 +78,4 @@ function random8BallNumber() {
     while (last8BallNumber == eightBallIndex) {
         eightBallIndex = Math.floor(Math.random() * (max + min) - min);
     }
-
-    console.log(eightBallIndex);
-    console.log(eightBallResponses);
 }
