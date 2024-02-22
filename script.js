@@ -27,12 +27,13 @@ let eightBallResponses = [
 
 let eightBallIndex = 0;
 let EightBallText = "";
-
+let textColor = "black";
 
 //View
 updateView();
 
 function updateView() {
+
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="center">
         <div class="black ball center" onclick="shake8Ball()">
@@ -42,7 +43,7 @@ function updateView() {
                 </div>
             </div>
         </div>
-        <div id="eightBallTextDiv">${EightBallText}</div>   
+        <div id="eightBallTextDiv" style="color:${textColor}">${EightBallText}</div>   
     </div>
     `;
 }
@@ -51,12 +52,21 @@ function updateView() {
 function shake8Ball() {
     random8BallNumber();
     EightBallText = eightBallResponses[eightBallIndex];
+    change8BallAnswerColor();
     updateView();
 }
 
-/* function change8BallAnswerColor() {
-    document.getElementById("eightBallTextDiv").style.color = "red";
-} */
+function change8BallAnswerColor() {
+    if (eightBallIndex <= 9) {
+        textColor = 'green';
+    }
+    else if (eightBallIndex >= 15) {
+        textColor = 'red';
+    }
+    else if (eightBallIndex > 9 && eightBallIndex < 15) {
+        textColor = 'yellow';
+    }
+}
 
 function random8BallNumber() {
     //Minste den kan være er 0

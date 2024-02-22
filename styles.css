@@ -25,9 +25,9 @@ body {
 }
 
 #eightBallTextDiv {
+    font-size: 300%;
     user-select: none;
     padding: 8px;
-    font-size: 300%;
 }
 
 .center {
@@ -35,8 +35,4 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.red {
-    color: red;
 }
