@@ -69,10 +69,10 @@ function change8BallAnswerColor() {
 }
 
 function random8BallNumber() {
-    //Minste den kan være er 0
+    //Minste den kan være er 0 rundet opp
     let min = Math.ceil(0);
 
-    //Høyeste den kan være er 20 
+    //Høyeste den kan være er 20 rundet ned
     let max = Math.floor(20);
 
     let last8BallNumber = eightBallIndex;
